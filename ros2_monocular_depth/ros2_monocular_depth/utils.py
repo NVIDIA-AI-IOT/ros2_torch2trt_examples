@@ -29,11 +29,11 @@ from torch2trt import torch2trt, trt
 from torch2trt import TRTModule
 import PIL
 
-from midas.midas_net_custom import MidasNet_small
+from .MiDaS.midas.midas_net_custom import MidasNet_small
 from torchvision.transforms import Compose
-from midas.midas_net import MidasNet
-from midas.midas_net_custom import MidasNet_small
-from midas.transforms import Resize, NormalizeImage, PrepareForNet
+from .MiDaS.midas.midas_net import MidasNet
+from .MiDaS.midas.midas_net_custom import MidasNet_small
+from .MiDaS.midas.transforms import Resize, NormalizeImage, PrepareForNet
 
 
 def convert_midas(model_path, trt_model_path, in_width, in_height):
