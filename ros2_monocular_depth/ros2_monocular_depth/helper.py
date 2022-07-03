@@ -66,7 +66,7 @@ class TRTMiDaS(Node):
     def read_cam_callback(self, msg):
         img = np.asarray(msg.data)
         self.image = np.reshape(img, (msg.height, msg.width, 3))
-        self.get_logger().info("Executing MiDaS: depth estimation using TensorRT (torch2trt)...\n"
+        self.get_logger().info("Executing MiDaS: depth estimation using TensorRT (torch2trt)...\n")
 
         cv2.imshow("Input Image", self.image)
         self.depth_image = self.execute()
