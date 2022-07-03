@@ -46,7 +46,7 @@ class TRTMiDaS(Node):
         self.weight_path = os.path.join(self.model_dir, 'model_small.pt')
 
     def start(self):
-        if not TRT_OUTPUT_MODEL_PATH:
+        if not os.path.isfile(self.trt_output_model_path):
             self.get_logger().info("Converting MiDaS Model to TensorRT")
             convert_midas(model_path=self.weight_path, trt_model_path=self.trt_output_model_path, in_width=256, in_height=256)
         self.get_logger().info("Loading MiDaS TensorRT model ")
